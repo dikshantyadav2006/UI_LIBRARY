@@ -4,8 +4,7 @@ import * as React from 'react';
 
 export type CardProps = React.HTMLAttributes<HTMLDivElement>;
 
-const cardClasses =
-  'rounded-lg border border-zinc-200 bg-white text-zinc-900 shadow-sm transition-shadow duration-200 ease-out hover:shadow-md';
+const cardClasses = 'rounded-lg border border-stone-900/10 bg-surface text-ink shadow-sm';
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(({ className, ...props }, ref) => {
   return (
@@ -38,7 +37,7 @@ export const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
     return (
       <h3
         ref={ref}
-        className={['text-lg font-semibold leading-none tracking-tight', className]
+        className={['text-lg font-semibold leading-none tracking-tight text-ink', className]
           .filter(Boolean)
           .join(' ')}
         {...props}
@@ -56,7 +55,7 @@ export const CardDescription = React.forwardRef<HTMLParagraphElement, CardDescri
     return (
       <p
         ref={ref}
-        className={['text-sm text-zinc-500', className].filter(Boolean).join(' ')}
+        className={['text-sm text-ink-muted', className].filter(Boolean).join(' ')}
         {...props}
       />
     );

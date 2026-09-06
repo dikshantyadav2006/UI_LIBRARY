@@ -11,6 +11,8 @@
     "clean": "rimraf .next out .turbo"
   },
   "dependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
     "@ui-library/types": "workspace:*",
     "@ui-library/ui": "workspace:*",
     "next": "^16.3.4",

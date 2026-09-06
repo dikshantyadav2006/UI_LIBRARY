@@ -2,14 +2,30 @@
 
 @source '../../../packages/ui/src';
 
+@theme {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, 'SF Mono', monospace;
+
+  --color-background: #faf9f7;
+  --color-surface: #ffffff;
+  --color-ink: #1c1917;
+  --color-ink-muted: #57534e;
+  --color-accent: #9a5b2b;
+  --color-accent-soft: #efe3d5;
+}
+
 :root {
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
+  --background: var(--color-background);
+  --foreground: var(--color-ink);
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-white text-zinc-900;
+    @apply bg-background font-sans text-ink antialiased;
   }
 }
 
@@ -26,7 +42,7 @@
   }
 
   .animate-fade-in-up {
-    animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   @media (prefers-reduced-motion: reduce) {
