@@ -4,7 +4,7 @@ import * as React from 'react';
 
 export type CardProps = React.HTMLAttributes<HTMLDivElement>;
 
-const cardClasses = 'rounded-lg border border-stone-900/10 bg-surface text-ink shadow-sm';
+const cardClasses = 'rounded-lg border border-border bg-card text-card-foreground';
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(({ className, ...props }, ref) => {
   return (

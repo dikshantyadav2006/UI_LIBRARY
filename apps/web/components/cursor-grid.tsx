@@ -28,7 +28,13 @@ const FALLOFF_CURVES: Record<Falloff, (t: number) => number> = {
 };
 
 const hexToRgb = (hex: string): [number, number, number] => {
-  const cleaned = hex.replace('#', '');
+  const cleaned = hex.replace('#', '').trim();
+  if (cleaned.startsWith('var(')) {
+    const resolved = getComputedStyle(document.documentElement)
+      .getPropertyValue(cleaned.replace(/^var\(/, '').replace(/\)$/, ''))
+      .trim();
+    return hexToRgb(resolved);
+  }
   const expanded =
     cleaned.length === 3
       ? cleaned

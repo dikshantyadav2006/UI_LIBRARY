@@ -8,15 +8,14 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 const baseClasses =
-  'inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 active:scale-[0.97]';
+  'inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]';
 
 const variantClasses: Record<NonNullable<ButtonProps['variant']>, string> = {
-  primary:
-    'bg-ink text-background shadow-sm hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-md',
+  primary: 'bg-primary text-primary-foreground hover:bg-primary/90',
   secondary:
-    'bg-surface text-ink ring-1 ring-inset ring-stone-900/10 hover:-translate-y-0.5 hover:ring-stone-900/20',
-  ghost: 'bg-transparent text-ink hover:bg-stone-900/5',
-  danger: 'bg-red-600 text-white shadow-sm hover:-translate-y-0.5 hover:bg-red-500 hover:shadow-md',
+    'bg-secondary text-secondary-foreground ring-1 ring-inset ring-border hover:bg-secondary/80',
+  ghost: 'text-foreground hover:bg-muted',
+  danger: 'bg-destructive/10 text-destructive hover:bg-destructive/20',
 };
 
 const sizeClasses: Record<NonNullable<ButtonProps['size']>, string> = {
