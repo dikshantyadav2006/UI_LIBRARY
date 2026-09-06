@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+import './globals.css';
+
 export const metadata: Metadata = {
   title: 'UI Library',
   description: 'Modern full-stack Turborepo with Next.js, Fastify, and shared UI',

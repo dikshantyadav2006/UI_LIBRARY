@@ -3,7 +3,7 @@ import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } fro
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-8 bg-gradient-to-b from-zinc-50 to-white p-8">
-      <div className="text-center">
+      <div className="animate-fade-in-up text-center">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-900">UI Library Monorepo</h1>
         <p className="mt-3 text-lg text-zinc-600">
           A modern full-stack Turborepo built with Next.js, Fastify, TypeScript &amp; Tailwind CSS
@@ -11,8 +11,11 @@ export default function HomePage() {
         </p>
       </div>
 
-      <div className="grid w-full max-w-3xl gap-6 sm:grid-cols-2">
-        <Card>
+      <div
+        className="grid w-full max-w-3xl gap-6 sm:grid-cols-2"
+        style={{ animationDelay: '120ms' }}
+      >
+        <Card className="animate-fade-in-up">
           <CardHeader>
             <CardTitle>Shared UI Package</CardTitle>
             <CardDescription>
@@ -36,7 +39,7 @@ export default function HomePage() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="animate-fade-in-up" style={{ animationDelay: '120ms' }}>
           <CardHeader>
             <CardTitle>Server Components</CardTitle>
             <CardDescription>
